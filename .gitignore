@@ -1,0 +1,12 @@
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin
+/vendor
+/release
+
+# Visual Studio Code specific
+.vscode/
