@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: trustedauthority
+      POSTGRES_PASSWORD: trustedauthority
+      POSTGRES_DB: trustedauthority
+    volumes:
+      - ./ta-migrations:/docker-entrypoint-initdb.d
+    networks:
+      - ta-network
+
+networks:
+  ta-network:
+
+volumes:
+  ta-migrations:
+    driver: local
